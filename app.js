@@ -6,7 +6,7 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  res.render();
+  res.render('index');
 });
 
 app.get('/api/whoami', function(req, res){
