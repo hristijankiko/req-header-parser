@@ -6,12 +6,12 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  res.render('index');
+  res.render();
 });
 
 app.get('/api/whoami', function(req, res){
   let ip, language, software;
-  ip = req.connection.remoteAddress;
+  ip = req.ip;
   language = req.headers["accept-language"].split(',')[0];
   software = req.headers["user-agent"].replace('(', ',').replace(')', ',').split(',')[1];
   let info = {
